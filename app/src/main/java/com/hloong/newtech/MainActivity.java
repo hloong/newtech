@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
                 e.onNext("test1");
                 e.onNext("test2");
                 e.onNext("test3");
+
                 e.onComplete();
                 e.onError(new Throwable("onError-->"));
             }
