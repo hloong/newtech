@@ -2,7 +2,10 @@ package com.hloong.newtech.customview;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -12,6 +15,8 @@ import android.view.View;
 
 public class CustomView extends View{
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+
     public CustomView(Context context) {
         super(context);
     }
@@ -29,7 +34,56 @@ public class CustomView extends View{
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(200,300,150,paint);
+//        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(Color.RED);
+//        paint.setStrokeWidth(20);
+//        paint.setStrokeCap(Paint.Cap.ROUND);
+//        canvas.drawLine(100,10,100,500,paint);
+//        canvas.drawCircle(200,300,150,paint);
+
+//        drawPath(canvas);
+        drawText(canvas);
+
+
+    }
+
+    /**
+     * 绘制文字
+     * @param canvas
+     */
+    private void drawText(Canvas canvas) {
+        paint.setTextSkewX(-0.25f);
+        paint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        paint.setTextAlign(Paint.Align.RIGHT);
+        paint.setTextSize(50);
+        canvas.drawText("gshabing",16,16,paint);
+    }
+
+    /**
+     * 绘制path路径
+     * @param canvas
+     */
+    private void drawPath(Canvas canvas) {
+
+        Path path = new Path();
+        path.moveTo(100,100);
+        path.lineTo(300,100);
+        path.lineTo(100,300);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        canvas.drawPath(path,paint);
+
+        path = new Path();
+        path.moveTo(100,400);
+        path.lineTo(300,400);
+        path.lineTo(100,600);
+        paint.setStrokeJoin(Paint.Join.BEVEL);
+        canvas.drawPath(path,paint);
+
+        path = new Path();
+        path.moveTo(100,700);
+        path.lineTo(300,700);
+        path.lineTo(100,900);
+        paint.setStrokeJoin(Paint.Join.MITER);
+        canvas.drawPath(path,paint);
     }
 }
