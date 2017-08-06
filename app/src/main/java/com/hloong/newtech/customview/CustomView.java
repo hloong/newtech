@@ -15,7 +15,7 @@ import android.view.View;
 
 public class CustomView extends View{
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-
+    private String str = "CustomView";
 
     public CustomView(Context context) {
         super(context);
@@ -54,9 +54,26 @@ public class CustomView extends View{
     private void drawText(Canvas canvas) {
         paint.setTextSkewX(-0.25f);
         paint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-        paint.setTextAlign(Paint.Align.RIGHT);
+        paint.setTextAlign(Paint.Align.CENTER);
         paint.setTextSize(50);
-        canvas.drawText("gshabing",16,16,paint);
+        canvas.drawText("gshabing",16,36,paint);
+
+        int top = 100;
+        int baselineX = 400;
+
+
+        paint.setColor(Color.RED);
+        Paint.FontMetrics fontMetrics = paint.getFontMetrics();
+        float baselineY = top - fontMetrics.top;
+        canvas.drawText(str, baselineX, baselineY, paint);
+
+        paint.setColor(Color.GREEN);
+        canvas.drawText(str, baselineX, top, paint);
+
+        paint.setColor(Color.YELLOW);
+        baselineY = top + (fontMetrics.bottom-fontMetrics.top)/2 - fontMetrics.bottom;
+        canvas.drawText(str, baselineX, baselineY, paint);
+
     }
 
     /**

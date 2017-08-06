@@ -1,13 +1,13 @@
 package com.hloong.newtech;
 
+import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.hloong.newtech.bean.Book;
 import com.hloong.newtech.databinding.ActivityMvvmBinding;
 
-public class MvvmActivity extends AppCompatActivity {
+public class MvvmActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

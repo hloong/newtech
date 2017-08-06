@@ -16,8 +16,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:theme="@style/Base.AlertDialog.AppCompat"
-            android:name=".MvvmActivity">
+            android:name=".MvvmActivity"
+            >
+        </activity>
+        <activity android:name=".CustomViewActivity">
         </activity>
     </application>
 

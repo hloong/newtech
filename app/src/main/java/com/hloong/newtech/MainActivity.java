@@ -2,6 +2,7 @@ package com.hloong.newtech;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,7 +35,13 @@ public class MainActivity extends Activity implements IBoyView {
         findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this,MvvmActivity.class));
+                startActivity(new Intent(MainActivity.this,MvvmActivity.class));
+            }
+        });
+        findViewById(R.id.tv_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,CustomViewActivity.class));
             }
         });
     }
