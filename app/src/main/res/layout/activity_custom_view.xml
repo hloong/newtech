@@ -11,6 +11,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.hloong.newtech.CustomViewActivity">
+    <com.hloong.newtech.customview.ZoomImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
     <com.hloong.newtech.customview.CustomProgressBarView
         android:id="@+id/cview"
         android:layout_width="100dp"
@@ -20,4 +25,10 @@
         app:textColor="#ff1111"
         app:textSize="10dp"
         app:roundColor="#ff8822"/>
+    <com.hloong.newtech.customview.GradientForView
+        android:layout_below="@+id/cview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.hloong.newtech.customview.GradientForView>
 </RelativeLayout>
