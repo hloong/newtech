@@ -1,9 +1,10 @@
-package com.hloong.newtech;
+package com.hloong.newtech.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.hloong.newtech.R;
 import com.hloong.newtech.customview.CustomProgressBarView;
 
 public class CustomViewActivity extends Activity {

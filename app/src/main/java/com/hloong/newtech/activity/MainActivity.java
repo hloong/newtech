@@ -1,4 +1,4 @@
-package com.hloong.newtech;
+package com.hloong.newtech.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.hloong.newtech.R;
 import com.hloong.newtech.bean.Boy;
 import com.hloong.newtech.view.IBoyView;
 
@@ -42,6 +43,13 @@ public class MainActivity extends Activity implements IBoyView {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,CustomViewActivity.class));
+            }
+        });
+        findViewById(R.id.tvAni).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,EffectActivity.class));
+                overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
             }
         });
     }

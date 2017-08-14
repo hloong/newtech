@@ -1,9 +1,10 @@
-package com.hloong.newtech;
+package com.hloong.newtech.activity;
 
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
+import com.hloong.newtech.R;
 import com.hloong.newtech.bean.Book;
 import com.hloong.newtech.databinding.ActivityMvvmBinding;
 
@@ -13,7 +14,7 @@ public class MvvmActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_mvvm);
-        ActivityMvvmBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_mvvm);
+        ActivityMvvmBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_mvvm);
         binding.setBook(new Book("databind","1000",""));
 
 
