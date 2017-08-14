@@ -6,7 +6,6 @@ package com.hloong.newtech.bean;
 
 public class Boy {
     private String name;
-
     public Boy(String name){
         this.name = name;
     }
