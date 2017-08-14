@@ -43,5 +43,7 @@ public class EffectActivity extends Activity {
                 animator.start();
             }
         });
+
+
     }
 }
