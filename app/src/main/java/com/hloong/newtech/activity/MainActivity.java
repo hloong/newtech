@@ -1,14 +1,18 @@
 package com.hloong.newtech.activity;
 
 import android.app.Activity;
+import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.hloong.newtech.R;
 import com.hloong.newtech.bean.Boy;
@@ -27,11 +31,16 @@ import static android.content.ContentValues.TAG;
 
 public class MainActivity extends Activity implements IBoyView {
     ListView listView;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textView = (TextView) findViewById(R.id.tv_view);
+
         listView = (ListView) findViewById(R.id.listview);
+        textView.setText(getApplicationMetaValue("UMENG_CHANNEL"));
         initObservable();
         findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +63,16 @@ public class MainActivity extends Activity implements IBoyView {
         });
     }
 
+    private String getApplicationMetaValue(String umeng_channel) {
+        String value = "";
+        try{
+            ApplicationInfo appInfo = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            value = appInfo.metaData.getString(umeng_channel);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return value;
+    }
 
 
     private void initObservable() {
