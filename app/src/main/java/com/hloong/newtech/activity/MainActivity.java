@@ -36,7 +36,7 @@ public class MainActivity extends Activity implements IBoyView {
         findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,MvvmActivity.class));
+                startActivity(new Intent(MainActivity.this,AnimationActivity.class));
             }
         });
         findViewById(R.id.tv_view).setOnClickListener(new View.OnClickListener() {
