@@ -58,9 +58,9 @@ android {
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
                         // 输出apk名称为XXapp1.4.0_2017-02-14.apk
                         if (variant.buildType.name.equals('release')) {
-                            fileName = "qkapp${defaultConfig.versionName}_${variant.productFlavors[0].name}_${releaseTime()}.apk"
+                            fileName = "app${defaultConfig.versionName}_${variant.productFlavors[0].name}_${releaseTime()}.apk"
                         } else if (variant.buildType.name.equals('debug')) {
-                            fileName = "qkapp${defaultConfig.versionName}_${releaseTime()}_debug.apk"
+                            fileName = "app${defaultConfig.versionName}_${releaseTime()}_debug.apk"
                         }
                         output.outputFile = new File(outputFile.parent, fileName)
                     }
