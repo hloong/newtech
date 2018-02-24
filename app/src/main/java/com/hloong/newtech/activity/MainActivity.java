@@ -36,11 +36,11 @@ public class MainActivity extends Activity implements IBoyView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         textView = (TextView) findViewById(R.id.tv_view);
 
         listView = (ListView) findViewById(R.id.listview);
         textView.setText(getApplicationMetaValue("UMENG_CHANNEL"));
+        //ceshi
         initObservable();
         findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
